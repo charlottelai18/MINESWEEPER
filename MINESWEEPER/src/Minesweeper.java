@@ -117,11 +117,10 @@ public class Minesweeper {
     }
 
     // ----------------------------
-    // Reveal logic (includes bonus cascade)
+    // Reveal logic
     // ----------------------------
 
     private void revealCascade(int startR, int startC) {
-        // BFS flood-fill for zeros
         Deque<int[]> q = new ArrayDeque<>();
         q.add(new int[] { startR, startC });
 
@@ -134,7 +133,7 @@ public class Minesweeper {
             if (revealed[r][c])
                 continue;
             if (mines[r][c])
-                continue; // safety
+                continue;
 
             revealed[r][c] = true;
 
