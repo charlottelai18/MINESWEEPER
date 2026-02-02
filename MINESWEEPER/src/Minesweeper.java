@@ -17,6 +17,8 @@ public class Minesweeper {
         System.out.println("Minesweeper!");
         renderPlaceholder();
 
+        placeMines();
+
         while (true) {
             System.out.print("Enter coordinate (row col) or 'quit': ");
             String line = sc.nextLine().trim();
@@ -35,4 +37,18 @@ public class Minesweeper {
             System.out.println();
         }
     }
+
+    private void placeMines() {
+        java.util.Random rand = new java.util.Random();
+        int placed = 0;
+        while (placed < MINES) {
+            int r = rand.nextInt(SIZE);
+            int c = rand.nextInt(SIZE);
+            if (!mines[r][c]) {
+                mines[r][c] = true;
+                placed++;
+            }
+        }
+    }
+
 }
