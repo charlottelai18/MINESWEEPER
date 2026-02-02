@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Minesweeper {
     private static final int SIZE = 10;
     private static final int MINES = 10;
+    private final boolean[][] mines = new boolean[SIZE][SIZE];
+    private final boolean[][] revealed = new boolean[SIZE][SIZE];
+    private final int[][] counts = new int[SIZE][SIZE];
 
     public static void main(String[] args) {
         new Minesweeper().run();
